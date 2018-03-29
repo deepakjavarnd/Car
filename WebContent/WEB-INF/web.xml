@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+
+	<display-name>CarRentalSystem</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+
+	<!-- Servlet Congiguration -->
+	<servlet>
+		<servlet-name>addNewCar</servlet-name>
+		<servlet-class>com.javarnd.controller.CarAddAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>getAvailbleCar</servlet-name>
+		<servlet-class>com.javarnd.controller.GetAvailbleCarAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>deleteCar</servlet-name>
+		<servlet-class>com.javarnd.controller.CarDeleteAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>blockCar</servlet-name>
+		<servlet-class>com.javarnd.controller.CarStatusChangeAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>addNewCustomer</servlet-name>
+		<servlet-class>com.javarnd.controller.CustomerAddAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>getAllCustomer</servlet-name>
+		<servlet-class>com.javarnd.controller.GetAllCustomerAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>deleteCustomer</servlet-name>
+		<servlet-class>com.javarnd.controller.CustomerDeleteAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>blockCustomer</servlet-name>
+		<servlet-class>com.javarnd.controller.CustomerStatusChangeAction</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>carBookDropDown</servlet-name>
+		<servlet-class>com.javarnd.controller.CarBookDropDownAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>carBook</servlet-name>
+		<servlet-class>com.javarnd.controller.CarBookAction</servlet-class>
+	</servlet>
+
+
+	<!-- Servlet URL Pattern Congiguration -->
+	<servlet-mapping>
+		<servlet-name>addNewCar</servlet-name>
+		<url-pattern>/addCarAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>getAvailbleCar</servlet-name>
+		<url-pattern>/getAvailbleCarAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>deleteCar</servlet-name>
+		<url-pattern>/deleteCarAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>blockCar</servlet-name>
+		<url-pattern>/carStatusChangeAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>addNewCustomer</servlet-name>
+		<url-pattern>/addCustomerAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>getAllCustomer</servlet-name>
+		<url-pattern>/getAllCustomerAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>deleteCustomer</servlet-name>
+		<url-pattern>/deleteCustomerAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>blockCustomer</servlet-name>
+		<url-pattern>/customerStatusChangeAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>carBookDropDown</servlet-name>
+		<url-pattern>/carBookDropDownAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>carBook</servlet-name>
+		<url-pattern>/carBookAction</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlet Filte -->
+	<filter>
+		<filter-name>ServletRequestFilter</filter-name>
+		<filter-class>com.javarnd.filters.ServletRequestFilter</filter-class>
+	</filter>
+
+	<!-- Servlet Mapping -->
+	<filter-mapping>
+		<filter-name>ServletRequestFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+</web-app>
